@@ -98,8 +98,8 @@ comboBox.addEventListener('change', () => {
     section.innerHTML = "";
     const userInput = comboBox.value;
     logic(userInput);
-    console.log(option);
-});
+        console.log(option);
+    });
 
 function logic(day) {
     schedule.forEach(element => {

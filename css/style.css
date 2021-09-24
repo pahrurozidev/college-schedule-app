@@ -68,7 +68,7 @@ ul li {
     height: 40px;
     display: flex;
     align-items: center;
-    transform: translateX(-108px);
+    transform: translateX(-102px);
     box-sizing: border-box;
     cursor: pointer;
     transition: all 1s;
