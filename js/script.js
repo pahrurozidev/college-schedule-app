@@ -2,6 +2,8 @@ const comboBox = document.getElementById('day');
 const section = document.getElementsByTagName('section')[1];
 const showAll = document.querySelector('.show-all');
 const p = showAll.querySelector('p');
+const option = comboBox.querySelectorAll('option');
+
 const form = document.querySelector('.form');
 form.classList.toggle('slide');
 
@@ -66,25 +68,25 @@ p.addEventListener('click', (e) => {
     showAll.classList.toggle('to-right');
 
     schedule.forEach(element => {
-        element.senin.forEach(el => {
-            section.insertAdjacentHTML("afterbegin", designUI(el));
-        });
-        element.selasa.forEach(el => {
-            section.insertAdjacentHTML("afterbegin", designUI(el));
-        });
-        element.rabu.forEach(el => {
-            section.insertAdjacentHTML("afterbegin", designUI(el));
-        });
-        element.kamis.forEach(el => {
-            section.insertAdjacentHTML("afterbegin", designUI(el));
-        });
-        element.jumat.forEach(el => {
+        element.minggu.forEach(el => {
             section.insertAdjacentHTML("afterbegin", designUI(el));
         });
         element.sabtu.forEach(el => {
             section.insertAdjacentHTML("afterbegin", designUI(el));
         });
-        element.minggu.forEach(el => {
+        element.jumat.forEach(el => {
+            section.insertAdjacentHTML("afterbegin", designUI(el));
+        });
+        element.kamis.forEach(el => {
+            section.insertAdjacentHTML("afterbegin", designUI(el));
+        });
+        element.rabu.forEach(el => {
+            section.insertAdjacentHTML("afterbegin", designUI(el));
+        });
+        element.selasa.forEach(el => {
+            section.insertAdjacentHTML("afterbegin", designUI(el));
+        });
+        element.senin.forEach(el => {
             section.insertAdjacentHTML("afterbegin", designUI(el));
         });
     });
@@ -96,6 +98,7 @@ comboBox.addEventListener('change', () => {
     section.innerHTML = "";
     const userInput = comboBox.value;
     logic(userInput);
+    console.log(option);
 });
 
 function logic(day) {
@@ -145,7 +148,7 @@ function designUI(elements) {
     return /*html*/ `
     <div class="container">
         <ul>
-            <h4>${(firstUpper) ? (firstUpper) : ""}</h4>
+            <h3>${(firstUpper) ? (firstUpper) : ""}</h3>
             <li style="font-weight: bolder;">${elements.course}
             </li>
             <li>${elements.scu}</li>
